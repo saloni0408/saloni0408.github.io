@@ -1,0 +1,348 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Saloni 🎉</title>
+
+  <!-- Google Fonts + AOS -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 180px;
+      margin-bottom: 50px;
+    }
+
+    .layer {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 20px;
+      width: 180px;
+      height: 50px;
+      background: #ff9aa2;
+      box-shadow: inset 0 -5px 0 #e57373;
+      opacity: 0;
+      animation: popin 0.8s ease-out forwards;
+    }
+
+    .layer:nth-child(1) {
+      bottom: 0;
+      animation-delay: 0s;
+    }
+    .layer:nth-child(2) {
+      bottom: 55px;
+      width: 160px;
+      background: #fbc687;
+      box-shadow: inset 0 -5px 0 #e7a55c;
+      animation-delay: 0.8s;
+    }
+    .layer:nth-child(3) {
+      bottom: 110px;
+      width: 140px;
+      background: #c2b0e2;
+      box-shadow: inset 0 -5px 0 #9d83d6;
+      animation-delay: 1.6s;
+    }
+
+    .frosting {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 25px;
+      background: #fff;
+      border-radius: 50%;
+      z-index: 2;
+      opacity: 0;
+      animation: popin 0.8s ease-out forwards 2.5s;
+    }
+
+    .candle {
+      position: absolute;
+      top: -55px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 35px;
+      background: repeating-linear-gradient(
+        to bottom, #333, #333 5px, #fff 5px, #fff 10px
+      );
+      border-radius: 5px;
+      z-index: 3;
+      opacity: 0;
+      animation: popin 0.8s ease-out forwards 3.2s;
+    }
+
+    .flame {
+      position: absolute;
+      top: -72px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle, #ff0 0%, #f90 70%, transparent 80%);
+      border-radius: 50%;
+      opacity: 0;
+      animation: popin 0.8s ease-out forwards 3.8s, flameflicker 0.4s infinite alternate;
+    }
+
+    @keyframes popin {
+      0% { opacity: 0; transform: translateX(-50%) translateY(30px); }
+      100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    @keyframes flameflicker {
+      0% { transform: translateX(-50%) scale(1); }
+      100% { transform: translateX(-50%) scale(1.1); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 35px 25px;
+      border-radius: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .card img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff8fa3;
+      margin-bottom: 20px;
+      box-shadow: 0 0 12px rgba(255, 111, 97, 0.6);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.4rem;
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      background: #ff6f61;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 111, 97, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 0 15px rgba(255, 111, 97, 0);
+      }
+    }
+
+    input[type="file"] {
+      margin-top: 15px;
+    }
+.clock-container {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  animation: glowFade 3s ease-in-out infinite alternate;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+@keyframes glowFade {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2),
+                0 0 16px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.4),
+                0 0 24px rgba(255, 255, 255, 0.3);
+  }
+}
+    #popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      display: none;
+      text-align: center;
+      z-index: 999;
+    }
+    .typing-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.4rem;
+  color: #ff6f61;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ff6f61;
+  width: 0;
+  animation: typing 3.5s steps(30, end) forwards,  0.7s step-end infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #ff6f61; }
+}
+
+  </style>
+</head>
+
+<body >
+  <!-- Background Music + Celebration Sound -->
+<audio id="bg-music" autoplay loop style="display:none;">
+  <source src="https://cdn.pixabay.com/audio/2023/02/28/audio_b4b204d162.mp3" type="audio/mpeg">
+</audio>
+
+  <audio id="celebrateSound" src="https://www.fesliyanstudios.com/play-mp3/6969"></audio>
+
+  <div class="container" data-aos="fade-up">
+    <!-- Cake -->
+    <div class="cake">
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="frosting"></div>
+      <div class="candle"></div>
+      <div class="flame"></div>
+    </div>
+<audio id="bg-music" autoplay loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+    <!-- Card -->
+    <div class="card" data-aos="zoom-in">
+      <img src="cartoon-girl-with-birthday-cake-balloons-generative-ai_958192-11340.jpg" id="customImage" alt="Saloni">
+      <h1 class="typing-text">Happy Birthday</h1>
+      <h2 class="typingb-text">Dear Saloni🎂</h2>
+      <p>Wishing you joy, cake, and laughter! Have a blast!</p>
+      <form action="https://formspree.io/f/mwpqnwej" method="POST" onsubmit="showPopup(); playCelebrate(); return true;">
+        <input type="hidden" name="message" value="Thanks for birthday wishes">
+        <button class="btn" type="submit">Celebrate 🎈</button>
+      </form>
+      <section class="fade-in" data-aos="fade-up">
+  <!-- Cake ya card ke niche daalna ho to -->
+  <div class="clock-container">
+    <h2 id="clock"></h2>
+  </div>
+</section>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup">
+    <h2>🎉 Thank you!</h2>
+    <p>Your wishes made this day brighter!</p>
+  </div>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Logic -->
+  <script>
+    
+
+    function previewImage(event) {
+      const img = document.getElementById('customImage');
+      img.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+  
+
+    function showPopup() {
+      const pop = document.getElementById("popup");
+      pop.style.display = "block";
+      setTimeout(() => {
+        pop.style.display = "none";
+      }, 3500);
+    }
+
+  function updateClock() {
+    const now = new Date();
+    const formatted = now.toLocaleString('en-IN', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+    document.getElementById('clock').textContent = formatted;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock(); // initial call
+
+    function playCelebrate() {
+      document.getElementById("celebrateSound").play();
+    }
+    window.addEventListener('load', () => {
+    const music = document.getElementById('bg-music');
+    music.play().catch(() => {
+      document.addEventListener('click', () => music.play(), { once: true });
+    });
+  });
+  </script>
+</body>
+</html>
